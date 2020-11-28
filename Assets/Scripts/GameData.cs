@@ -11,7 +11,7 @@ public class GameData
         finishedGames++;
     }
 
-    public bool FinishedAllGames() {
+    public static bool FinishedAllGames() {
         return finishedGames >= numberForFinish;
     }
 
