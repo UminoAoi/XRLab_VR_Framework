@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/R_teamNumber.unity
+    path: Assets/Scenes/R_001.unity
     guid: a72489dcfd0ead64b91f9cbc68c7bff1
   m_configObjects: {}
