@@ -12,6 +12,7 @@ public class ExitFromMinigame : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if (other.name.Equals("HeadCollider")) {
+            GameData.FinishGame();
             SceneManager.LoadScene(sceneName);
         }
     }
