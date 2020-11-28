@@ -43,6 +43,16 @@ public class MiniGame1Manager : MonoBehaviour {
 
     }
 
+    public void TryNextRound() {
+        if (currentAnswerCount >= neededAnswers) {
+            gameStarted = false;
+            exit.ChangeExitAvailibity(false);
+        } else {
+            PlayNewSound();
+        }
+    }
+
+
     public void StartMiniGame() {
         gameStarted = true;
         exit.ChangeExitAvailibity(true);
@@ -95,7 +105,7 @@ public class MiniGame1Manager : MonoBehaviour {
             Debug.Log(currentAnswerCount);
             timeWaited = 0;
             audioSource.Play();
-            PlayNewSound();
+            TryNextRound();
         } 
     }
 }
