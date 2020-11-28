@@ -9,7 +9,6 @@ using UnityEngine;
 public class MiniGame1Manager : MonoBehaviour
 {
     protected MiniGame1Manager() { }
-    private static MiniGame1Manager _instance;
     public bool gameStarted;
     public Player player;
     public AudioSource audioSource;
@@ -22,24 +21,10 @@ public class MiniGame1Manager : MonoBehaviour
     private long timeElapsed = 0;
     private ItemType lastPlayed;
 
-    public static MiniGame1Manager Instance
-    {
-        get
-        {
-            if (Instance == null)
-            {
-                DontDestroyOnLoad(_instance);
-                _instance = new MiniGame1Manager();
-            }
-
-            return _instance;
-        }
-    }
 
     // Start is called before the first frame update
     private void Start()
     {
-        _instance = Instance;
         intervalStopwatch = new Stopwatch();
         reactionStopwatch = new Stopwatch();
         audioSource = GetComponent<AudioSource>();
