@@ -1,63 +1,71 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Timers;
 using Assets.Scripts._1MiniGame;
 using Assets.SteamVR.InteractionSystem.Core.Scripts;
 using UnityEngine;
 
-public class MiniGame1Manager : MonoBehaviour
-{
+public class MiniGame1Manager : MonoBehaviour {
     protected MiniGame1Manager() { }
     public bool gameStarted;
     public Player player;
     public AudioSource audioSource;
     public AudioClip instructions, fireAudioClip, waterAudioClip, stormAudioClip, lightningAudioClip, goodAudioClip, badAudioClip, tooLateAudioClip;
-    private Stopwatch intervalStopwatch;
-    private Stopwatch reactionStopwatch;
-    public long timeIntervalInMs = 6000;
-    private long timeWaited = 0;
-    public long timeToReactInMs = 5000;
-    private long timeElapsed = 0;
+    ExitFromMinigame exit;
+
+    private float newIntructionTime = 6;
+
+    private float timeWaited = 0;
     private ItemType lastPlayed;
 
+    int neededAnswers = 10;
+    int currentAnswerCount = 0;
 
     // Start is called before the first frame update
-    private void Start()
-    {
-        intervalStopwatch = new Stopwatch();
-        reactionStopwatch = new Stopwatch();
+    private void Start() {
+        exit = FindObjectOfType<ExitFromMinigame>();
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = instructions;
         audioSource.Play();
     }
 
     // Update is called once per frame
-    private void Update()
-    {
-        if (gameStarted)
-        {
-            timeWaited = intervalStopwatch.ElapsedMilliseconds;
-            if (timeWaited >= timeIntervalInMs)
-            {
-                PlaySound();
-                intervalStopwatch.Restart();
+    private void Update() {
+        if (gameStarted) {
+            timeWaited += Time.deltaTime;
+            if (timeWaited >= newIntructionTime) {
+                StartCoroutine(PlayLateSound());
             }
         }
+
+        if(currentAnswerCount >= neededAnswers) {
+            gameStarted = false;
+            exit.ChangeExitAvailibity(false);
+        }
+
     }
 
-    public void StartMiniGame()
-    {
+    public void StartMiniGame() {
         gameStarted = true;
-        intervalStopwatch.Start();
+        exit.ChangeExitAvailibity(true);
+        PlayNewSound();
     }
 
-    public void PlaySound()
-    {
+    public IEnumerator PlayLateSound() {
+        timeWaited = 0;
+        audioSource.clip = tooLateAudioClip;
+        audioSource.Play();
+        yield return new WaitForSeconds(2);
+
+        PlayNewSound();
+    }
+
+    public void PlayNewSound() {
+        if (!gameStarted)
+            return;
+
+        timeWaited = 0;
         int rand = Random.Range(0, 3);
         lastPlayed = (ItemType)rand;
-        switch (lastPlayed)
-        {
+        switch (lastPlayed) {
             case ItemType.Feuer:
                 audioSource.clip = fireAudioClip;
                 break;
@@ -72,41 +80,22 @@ public class MiniGame1Manager : MonoBehaviour
                 break;
         }
         audioSource.Play();
-        reactionStopwatch.Start();
+        timeWaited = 0;
     }
 
-    public void OnInteract(ItemType itemType)
-    {
-        if (gameStarted)
-        {
-            timeElapsed = reactionStopwatch.ElapsedMilliseconds;
-            if (timeElapsed <= timeToReactInMs)
-            {
-                if (lastPlayed != null)
-                {
-                    if (lastPlayed == itemType)
-                    {
-                        audioSource.clip = goodAudioClip;
-                        audioSource.Play();
-                    }
-                    else
-                    {
-                        audioSource.clip = badAudioClip;
-                        audioSource.Play();
-                    }
-                }
+    public void OnInteract(ItemType itemType) {
+        if (gameStarted) {
+            if (lastPlayed == itemType) {
+                audioSource.clip = goodAudioClip;
+                currentAnswerCount++;
+            } else {
+                audioSource.clip = badAudioClip;
             }
-            else
-            {
-                audioSource.clip = tooLateAudioClip;
-                audioSource.Play();
-            }
-            reactionStopwatch.Reset();
-            reactionStopwatch.Stop();
-        }
-        else
-        {
-            StartMiniGame();
-        }
+
+            Debug.Log(currentAnswerCount);
+            timeWaited = 0;
+            audioSource.Play();
+            PlayNewSound();
+        } 
     }
 }

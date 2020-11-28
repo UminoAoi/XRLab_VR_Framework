@@ -20,11 +20,9 @@ public class ObjectScript : Interactable {
     }
 
     public override void OnPointerEnter(HandManager handManager, PointerEventArgs args) {
-        throw new System.NotImplementedException();
     }
 
     public override void OnPointerExit(HandManager handManager, PointerEventArgs args) {
-        throw new System.NotImplementedException();
     }
 
 }
