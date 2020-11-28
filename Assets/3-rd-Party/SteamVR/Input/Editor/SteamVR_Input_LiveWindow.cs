@@ -1,19 +1,8 @@
-﻿using UnityEditor;
+﻿using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
-using System.CodeDom;
-using Microsoft.CSharp;
-using System.IO;
-using System.CodeDom.Compiler;
-
-using System.Linq;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Linq.Expressions;
-using System;
-using UnityEditorInternal;
-
-namespace Valve.VR
+namespace Assets.SteamVR.Input.Editor
 {
     public class SteamVR_Input_LiveWindow : EditorWindow
     {

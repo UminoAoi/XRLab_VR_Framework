@@ -8,13 +8,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using Assets.SteamVR.Input;
+
 namespace Valve.VR
 {
     using System;
     using UnityEngine;
     
     
-    public class SteamVR_Input_ActionSet_mixedreality : Valve.VR.SteamVR_ActionSet
+    public class SteamVR_Input_ActionSet_mixedreality : SteamVR_ActionSet
     {
         
         public virtual SteamVR_Action_Pose ExternalCamera

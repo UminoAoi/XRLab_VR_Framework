@@ -4,11 +4,13 @@
 //
 //=============================================================================
 
+using System.Collections;
+using Assets.SteamVR.Plugins;
+using Assets.SteamVR.Scripts;
 using UnityEngine;
 using UnityEngine.Events;
-using System.Collections;
 
-namespace Valve.VR.InteractionSystem
+namespace Assets.SteamVR.InteractionSystem.Teleport.Scripts
 {
 	//-------------------------------------------------------------------------
 	public class ChaperoneInfo : MonoBehaviour

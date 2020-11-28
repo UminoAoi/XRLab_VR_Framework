@@ -1,9 +1,10 @@
 ﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
 
 using System;
+using Assets.SteamVR.Plugins;
 using UnityEngine.Events;
 
-namespace Valve.VR
+namespace Assets.SteamVR.Input.BehaviourUnityEvents
 {
     [Serializable]
     public class SteamVR_Behaviour_Skeleton_TrackingChangedEvent : UnityEvent<SteamVR_Behaviour_Skeleton, SteamVR_Input_Sources, ETrackingResult> { }

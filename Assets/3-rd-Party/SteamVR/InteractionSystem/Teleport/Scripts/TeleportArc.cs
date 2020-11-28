@@ -4,9 +4,10 @@
 //
 //=============================================================================
 
+using Assets.SteamVR.InteractionSystem.Core.Scripts;
 using UnityEngine;
 
-namespace Valve.VR.InteractionSystem
+namespace Assets.SteamVR.InteractionSystem.Teleport.Scripts
 {
     //-------------------------------------------------------------------------
     public class TeleportArc : MonoBehaviour

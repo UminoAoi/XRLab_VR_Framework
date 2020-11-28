@@ -1,12 +1,11 @@
 ﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
 
+using Assets.SteamVR.Input;
+using Assets.SteamVR.Plugins;
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine.Serialization;
 
-namespace Valve.VR
+namespace Assets.SteamVR.Scripts
 {
     public class SteamVR_Settings : ScriptableObject
     {
@@ -38,7 +37,7 @@ namespace Valve.VR
         }
 
         [SerializeField]
-        [FormerlySerializedAsAttribute("trackingSpace")]
+        [FormerlySerializedAs("trackingSpace")]
         private ETrackingUniverseOrigin trackingSpaceOrigin = ETrackingUniverseOrigin.TrackingUniverseStanding;
 
         [Tooltip("Filename local to StreamingAssets/SteamVR/ folder")]

@@ -5,10 +5,9 @@
 //=============================================================================
 
 using UnityEngine;
-using System.Collections;
 using UnityEngine.EventSystems;
 
-namespace Valve.VR.InteractionSystem
+namespace Assets.SteamVR.InteractionSystem.Core.Scripts
 {
 	//-------------------------------------------------------------------------
 	public class InputModule : BaseInputModule

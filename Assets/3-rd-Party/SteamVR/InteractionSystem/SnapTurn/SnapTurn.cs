@@ -1,11 +1,13 @@
 ﻿// Copyright (c) Valve Corporation, All rights reserved. ======================================================================================================
 
 
-
-using UnityEngine;
 using System.Collections;
+using Assets.SteamVR.Input;
+using Assets.SteamVR.InteractionSystem.Core.Scripts;
+using Assets.SteamVR.Scripts;
+using UnityEngine;
 
-namespace Valve.VR.InteractionSystem
+namespace Assets.SteamVR.InteractionSystem.SnapTurn
 {
     //-----------------------------------------------------------------------------
     public class SnapTurn : MonoBehaviour

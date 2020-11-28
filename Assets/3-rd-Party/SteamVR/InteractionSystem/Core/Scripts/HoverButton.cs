@@ -5,10 +5,8 @@
 //=============================================================================
 
 using UnityEngine;
-using System.Collections;
-using UnityEngine.Events;
 
-namespace Valve.VR.InteractionSystem
+namespace Assets.SteamVR.InteractionSystem.Core.Scripts
 {
     //-------------------------------------------------------------------------
     [RequireComponent(typeof(Interactable))]

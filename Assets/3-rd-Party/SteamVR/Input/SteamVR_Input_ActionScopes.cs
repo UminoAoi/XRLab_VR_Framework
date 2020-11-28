@@ -1,7 +1,7 @@
 ﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
 
 
-namespace Valve.VR
+namespace Assets.SteamVR.Input
 {
     public enum SteamVR_Input_ActionScopes
     {

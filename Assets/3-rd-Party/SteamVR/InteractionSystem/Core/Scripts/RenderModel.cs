@@ -1,10 +1,12 @@
 ﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
 
-using UnityEngine;
-using System.Collections;
 using System;
+using Assets.SteamVR.Input;
+using Assets.SteamVR.Plugins;
+using Assets.SteamVR.Scripts;
+using UnityEngine;
 
-namespace Valve.VR.InteractionSystem
+namespace Assets.SteamVR.InteractionSystem.Core.Scripts
 {
     public class RenderModel : MonoBehaviour
     {

@@ -1,11 +1,12 @@
 ﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
-using UnityEngine;
+
 using System.Collections;
+using Assets.SteamVR.Input;
+using UnityEngine;
 
-//namespace Valve.VR.Extras
-using Valve.VR;
-
-public class SteamVR_LaserPointer : MonoBehaviour
+namespace Assets.Scripts.VR
+{
+    public class SteamVR_LaserPointer : MonoBehaviour
     {
         public SteamVR_Behaviour_Pose pose;
 
@@ -110,8 +111,8 @@ public class SteamVR_LaserPointer : MonoBehaviour
                 RaycastHit hit;
                 bool bHit = Physics.Raycast(raycast, out hit);
 
-            if (previousContact && previousContact != hit.transform) {
-                PointerEventArgs args = new PointerEventArgs();
+                if (previousContact && previousContact != hit.transform) {
+                    PointerEventArgs args = new PointerEventArgs();
                     args.fromInputSource = pose.inputSource;
                     args.distance = 0f;
                     args.flags = 0;
@@ -131,7 +132,7 @@ public class SteamVR_LaserPointer : MonoBehaviour
                     previousContact = hit.transform;
                 }
                 if (!bHit) {
-                previousContact = null;
+                    previousContact = null;
                 }
                 if (bHit && hit.distance < 100f) {
                     dist = hit.distance;
@@ -158,36 +159,36 @@ public class SteamVR_LaserPointer : MonoBehaviour
             }
         }
         public void AlignLaser(bool withController) {
-        if (withController)
-        {
-            if (SteamVR.instance.hmd_ModelNumber.Equals("Oculus Quest"))
-                holder.transform.localPosition = new Vector3(0f, 0f, -0.045f);
+            if (withController)
+            {
+                if (SteamVR.Scripts.SteamVR.instance.hmd_ModelNumber.Equals("Oculus Quest"))
+                    holder.transform.localPosition = new Vector3(0f, 0f, -0.045f);
+                else
+                    holder.transform.localPosition = new Vector3(0, 0, 0);
+            }
             else
-                holder.transform.localPosition = new Vector3(0, 0, 0);
-        }
-        else
-            holder.transform.localPosition = new Vector3(-0.035f, -0.05f, -0.01f);
+                holder.transform.localPosition = new Vector3(-0.035f, -0.05f, -0.01f);
         }
 
         public void OnPointIn(PointerEventArgs args) {
-        Interactable interactable = args.target.GetComponent<Interactable>();
+            Interactable.Interactable interactable = args.target.GetComponent<Interactable.Interactable>();
             if(interactable != null) {
                 interactable.OnPointerEnter(GetComponent<HandManager>(), args);
             }
         }
         public void OnPointOut(PointerEventArgs args) {
-        Interactable interactable = args.target.GetComponent<Interactable>();
+            Interactable.Interactable interactable = args.target.GetComponent<Interactable.Interactable>();
             if (interactable != null) {
                 interactable.OnPointerExit(GetComponent<HandManager>(), args);
+            }
         }
-    }
 
-    public void OnInteracting(PointerEventArgs args) {
-        Interactable interactable = args.target.GetComponent<Interactable>();
-        if (interactable != null) {
-            interactable.OnInteraction(GetComponent<HandManager>(), args);
+        public void OnInteracting(PointerEventArgs args) {
+            Interactable.Interactable interactable = args.target.GetComponent<Interactable.Interactable>();
+            if (interactable != null) {
+                interactable.OnInteraction(GetComponent<HandManager>(), args);
+            }
         }
-    }
     }
 
 
@@ -200,3 +201,4 @@ public class SteamVR_LaserPointer : MonoBehaviour
     }
 
     public delegate void PointerEventHandler(object sender, PointerEventArgs e);
+}

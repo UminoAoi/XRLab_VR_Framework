@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Assets.SteamVR.Input.BehaviourUnityEvents;
+using Assets.SteamVR.Plugins;
+using UnityEngine;
 //======= Copyright (c) Valve Corporation, All rights reserved. ===============
 
-using System.Text;
-
-using UnityEngine;
-using UnityEngine.Events;
-
-namespace Valve.VR
+namespace Assets.SteamVR.Input
 {
     /// <summary>
     /// This component simplifies using boolean actions.

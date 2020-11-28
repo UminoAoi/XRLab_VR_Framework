@@ -4,15 +4,16 @@
 //
 //=============================================================================
 
-using UnityEngine;
-using UnityEditor;
-using System.Text;
 using System.Collections.Generic;
+using System.Text;
+using Assets.SteamVR.Scripts;
+using UnityEditor;
+using UnityEngine;
 
-namespace Valve.VR
+namespace Assets.SteamVR.Editor
 {
     [CustomEditor(typeof(SteamVR_RenderModel)), CanEditMultipleObjects]
-    public class SteamVR_RenderModelEditor : Editor
+    public class SteamVR_RenderModelEditor : UnityEditor.Editor
     {
         SerializedProperty script, index, modelOverride, shader, verbose, createComponents, updateDynamically;
 

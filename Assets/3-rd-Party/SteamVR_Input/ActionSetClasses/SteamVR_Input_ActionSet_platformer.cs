@@ -8,13 +8,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using Assets.SteamVR.Input;
+
 namespace Valve.VR
 {
     using System;
     using UnityEngine;
     
     
-    public class SteamVR_Input_ActionSet_platformer : Valve.VR.SteamVR_ActionSet
+    public class SteamVR_Input_ActionSet_platformer : SteamVR_ActionSet
     {
         
         public virtual SteamVR_Action_Vector2 Move

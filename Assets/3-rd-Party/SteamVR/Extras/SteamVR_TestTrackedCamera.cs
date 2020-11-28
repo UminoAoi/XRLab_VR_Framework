@@ -1,7 +1,10 @@
 ﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
+
+using Assets.SteamVR.Plugins;
+using Assets.SteamVR.Scripts;
 using UnityEngine;
 
-namespace Valve.VR.Extras
+namespace Assets.SteamVR.Extras
 {
     public class SteamVR_TestTrackedCamera : MonoBehaviour
     {

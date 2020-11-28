@@ -4,11 +4,11 @@
 //
 //=============================================================================
 
-using UnityEngine;
-using UnityEditor;
 using System.IO;
+using UnityEditor;
+using UnityEngine;
 
-namespace Valve.VR
+namespace Assets.SteamVR.Editor
 {
     [InitializeOnLoad]
     public class SteamVR_UnitySettingsWindow : EditorWindow

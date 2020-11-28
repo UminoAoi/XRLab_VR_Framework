@@ -4,12 +4,11 @@
 //
 //=============================================================================
 
+using Assets.SteamVR.InteractionSystem.Hints.Scripts;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
-using System;
 
-namespace Valve.VR.InteractionSystem
+namespace Assets.SteamVR.InteractionSystem.Core.Scripts
 {
 	//-------------------------------------------------------------------------
 	[RequireComponent( typeof( Interactable ) )]

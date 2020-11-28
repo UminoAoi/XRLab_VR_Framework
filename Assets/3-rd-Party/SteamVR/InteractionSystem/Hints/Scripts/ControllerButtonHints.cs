@@ -4,13 +4,17 @@
 //
 //=============================================================================
 
-using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.UI;
 using System.Text;
+using Assets.SteamVR.Input;
+using Assets.SteamVR.InteractionSystem.Core.Scripts;
+using Assets.SteamVR.Plugins;
+using Assets.SteamVR.Scripts;
+using UnityEngine;
+using UnityEngine.UI;
 
-namespace Valve.VR.InteractionSystem
+namespace Assets.SteamVR.InteractionSystem.Hints.Scripts
 {
 	//-------------------------------------------------------------------------
 	public class ControllerButtonHints : MonoBehaviour

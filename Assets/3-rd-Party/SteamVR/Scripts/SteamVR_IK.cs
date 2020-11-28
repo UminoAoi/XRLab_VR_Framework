@@ -6,7 +6,7 @@
 
 using UnityEngine;
 
-namespace Valve.VR
+namespace Assets.SteamVR.Scripts
 {
     public class SteamVR_IK : MonoBehaviour
     {

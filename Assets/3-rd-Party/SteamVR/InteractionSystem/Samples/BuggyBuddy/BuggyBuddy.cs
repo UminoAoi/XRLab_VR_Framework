@@ -1,9 +1,6 @@
 ﻿using UnityEngine;
-using System;
-using System.Collections;
 
-
-namespace Valve.VR.InteractionSystem.Sample
+namespace Assets.SteamVR.InteractionSystem.Samples.BuggyBuddy
 {
     public class BuggyBuddy : MonoBehaviour
     {

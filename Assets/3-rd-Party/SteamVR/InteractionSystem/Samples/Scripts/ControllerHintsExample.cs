@@ -4,11 +4,13 @@
 //
 //=============================================================================
 
-using UnityEngine;
 using System.Collections;
-using Valve.VR;
+using Assets.SteamVR.Input;
+using Assets.SteamVR.InteractionSystem.Core.Scripts;
+using Assets.SteamVR.InteractionSystem.Hints.Scripts;
+using UnityEngine;
 
-namespace Valve.VR.InteractionSystem.Sample
+namespace Assets.SteamVR.InteractionSystem.Samples.Scripts
 {
 	//-------------------------------------------------------------------------
 	public class ControllerHintsExample : MonoBehaviour

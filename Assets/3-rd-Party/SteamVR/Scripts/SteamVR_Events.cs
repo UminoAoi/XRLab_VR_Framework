@@ -17,11 +17,11 @@
 //
 //=============================================================================
 
+using Assets.SteamVR.Plugins;
 using UnityEngine;
 using UnityEngine.Events;
-using Valve.VR;
 
-namespace Valve.VR
+namespace Assets.SteamVR.Scripts
 {
     public static class SteamVR_Events
     {

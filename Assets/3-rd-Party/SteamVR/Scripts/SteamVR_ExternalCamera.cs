@@ -4,11 +4,12 @@
 //
 //=============================================================================
 
+using Assets.SteamVR.Input;
+using Assets.SteamVR.Plugins;
 using UnityEngine;
 using UnityEngine.Rendering;
-using Valve.VR;
 
-namespace Valve.VR
+namespace Assets.SteamVR.Scripts
 {
     public class SteamVR_ExternalCamera : MonoBehaviour
     {

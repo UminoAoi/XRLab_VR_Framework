@@ -4,11 +4,10 @@
 //
 //=============================================================================
 
-using System.Collections;
-using System.Collections.Generic;
+using Assets.SteamVR.Input;
 using UnityEngine;
 
-namespace Valve.VR.InteractionSystem
+namespace Assets.SteamVR.InteractionSystem.Core.Scripts
 {
 
     public enum WhichHand

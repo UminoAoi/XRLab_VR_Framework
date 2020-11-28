@@ -5,9 +5,8 @@
 //=============================================================================
 
 using UnityEngine;
-using System.Collections;
 
-namespace Valve.VR.InteractionSystem
+namespace Assets.SteamVR.InteractionSystem.Core.Scripts
 {
 	//-------------------------------------------------------------------------
 	[RequireComponent( typeof( Camera ) )]
@@ -32,37 +31,37 @@ namespace Valve.VR.InteractionSystem
 		void Update()
 		{
 			float forward = 0.0f;
-			if ( Input.GetKey( KeyCode.W ) || Input.GetKey( KeyCode.UpArrow ) )
+			if ( UnityEngine.Input.GetKey( KeyCode.W ) || UnityEngine.Input.GetKey( KeyCode.UpArrow ) )
 			{
 				forward += 1.0f;
 			}
-			if ( Input.GetKey( KeyCode.S ) || Input.GetKey( KeyCode.DownArrow ) )
+			if ( UnityEngine.Input.GetKey( KeyCode.S ) || UnityEngine.Input.GetKey( KeyCode.DownArrow ) )
 			{
 				forward -= 1.0f;
 			}
 
             float up = 0.0f;
-            if (Input.GetKey(KeyCode.E))
+            if (UnityEngine.Input.GetKey(KeyCode.E))
             {
                 up += 1.0f;
             }
-            if (Input.GetKey(KeyCode.Q))
+            if (UnityEngine.Input.GetKey(KeyCode.Q))
             {
                 up -= 1.0f;
             }
 
             float right = 0.0f;
-			if ( Input.GetKey( KeyCode.D ) || Input.GetKey( KeyCode.RightArrow ) )
+			if ( UnityEngine.Input.GetKey( KeyCode.D ) || UnityEngine.Input.GetKey( KeyCode.RightArrow ) )
 			{
 				right += 1.0f;
 			}
-			if ( Input.GetKey( KeyCode.A ) || Input.GetKey( KeyCode.LeftArrow ) )
+			if ( UnityEngine.Input.GetKey( KeyCode.A ) || UnityEngine.Input.GetKey( KeyCode.LeftArrow ) )
 			{
 				right -= 1.0f;
 			}
 
 			float currentSpeed = speed;
-			if ( Input.GetKey( KeyCode.LeftShift ) || Input.GetKey( KeyCode.RightShift ) )
+			if ( UnityEngine.Input.GetKey( KeyCode.LeftShift ) || UnityEngine.Input.GetKey( KeyCode.RightShift ) )
 			{
 				currentSpeed = shiftSpeed;
 			}
@@ -75,15 +74,15 @@ namespace Valve.VR.InteractionSystem
 
 			transform.position += transform.TransformDirection( delta );
 
-			Vector3 mousePosition = Input.mousePosition;
+			Vector3 mousePosition = UnityEngine.Input.mousePosition;
 
-			if ( Input.GetMouseButtonDown( 1 ) /* right mouse */)
+			if ( UnityEngine.Input.GetMouseButtonDown( 1 ) /* right mouse */)
 			{
 				startMousePosition = mousePosition;
 				startEulerAngles = transform.localEulerAngles;
 			}
 
-			if ( Input.GetMouseButton( 1 ) /* right mouse */)
+			if ( UnityEngine.Input.GetMouseButton( 1 ) /* right mouse */)
 			{
 				Vector3 offset = mousePosition - startMousePosition;
 				transform.localEulerAngles = startEulerAngles + new Vector3( -offset.y * 360.0f / Screen.height, offset.x * 360.0f / Screen.width, 0.0f );

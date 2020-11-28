@@ -1,16 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class ColorInformation
+namespace Assets.Scripts.ColorChanging
 {
-    public Material material;
-    public Color color;
-    public string name;
+    public class ColorInformation
+    {
+        public Material material;
+        public Color color;
+        public string name;
 
-    public ColorInformation(Material material, Color color, string name) {
-        this.material = material;
-        this.color = color;
-        this.name = name;
+        public ColorInformation(Material material, Color color, string name) {
+            this.material = material;
+            this.color = color;
+            this.name = name;
+        }
     }
 }

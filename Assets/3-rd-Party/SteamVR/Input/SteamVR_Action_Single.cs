@@ -2,9 +2,10 @@
 
 using System;
 using System.Runtime.InteropServices;
+using Assets.SteamVR.Plugins;
 using UnityEngine;
 
-namespace Valve.VR
+namespace Assets.SteamVR.Input
 {
     [Serializable]
     /// <summary>

@@ -2,11 +2,11 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
-using System.ComponentModel;
 
-namespace Valve.VR
+namespace Assets.SteamVR.Input
 {
     public enum SteamVR_Input_Sources
     {
@@ -52,9 +52,4 @@ namespace Valve.VR
         [Description("/user/treadmill")]
         Treadmill,
     }
-}
-
-namespace Valve.VR.InputSources
-{
-    using Sources = SteamVR_Input_Sources;
 }
