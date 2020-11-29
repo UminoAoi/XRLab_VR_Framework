@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using Assets.Scripts._1MiniGame;
 using Assets.SteamVR.InteractionSystem.Core.Scripts;
 using UnityEngine;
@@ -11,7 +12,7 @@ public class MiniGame1Manager : MonoBehaviour {
     public AudioClip instructions, fireAudioClip, waterAudioClip, stormAudioClip, lightningAudioClip, goodAudioClip, badAudioClip, tooLateAudioClip;
     ExitFromMinigame exit;
 
-    private float newIntructionTime = 6;
+    private float newInstructionTime = 6;
 
     private float timeWaited = 0;
     private ItemType lastPlayed;
@@ -19,10 +20,14 @@ public class MiniGame1Manager : MonoBehaviour {
     int neededAnswers = 10;
     int currentAnswerCount = 0;
 
+    public GameObject itemsParent;
+    private List<GameObject> items;
+
     // Start is called before the first frame update
     private void Start() {
         exit = FindObjectOfType<ExitFromMinigame>();
         audioSource = GetComponent<AudioSource>();
+        items = new List<GameObject>(itemsParent.GetComponentsInChildren<GameObject>());
         audioSource.clip = instructions;
         audioSource.Play();
     }
@@ -31,7 +36,7 @@ public class MiniGame1Manager : MonoBehaviour {
     private void Update() {
         if (gameStarted) {
             timeWaited += Time.deltaTime;
-            if (timeWaited >= newIntructionTime) {
+            if (timeWaited >= newInstructionTime) {
                 StartCoroutine(PlayLateSound());
             }
         }
@@ -52,7 +57,6 @@ public class MiniGame1Manager : MonoBehaviour {
         }
     }
 
-
     public void StartMiniGame() {
         gameStarted = true;
         exit.ChangeExitAvailibity(true);
@@ -63,6 +67,7 @@ public class MiniGame1Manager : MonoBehaviour {
         timeWaited = 0;
         audioSource.clip = tooLateAudioClip;
         audioSource.Play();
+        SwapPositions();
         yield return new WaitForSeconds(2);
 
         PlayNewSound();
@@ -73,7 +78,7 @@ public class MiniGame1Manager : MonoBehaviour {
             return;
 
         timeWaited = 0;
-        int rand = Random.Range(0, 3);
+        int rand = Random.Range(0, 4);
         lastPlayed = (ItemType)rand;
         switch (lastPlayed) {
             case ItemType.Feuer:
@@ -88,9 +93,24 @@ public class MiniGame1Manager : MonoBehaviour {
             case ItemType.Blitz:
                 audioSource.clip = lightningAudioClip;
                 break;
+            default:
+                Debug.Log(lastPlayed);
+                break;
         }
         audioSource.Play();
         timeWaited = 0;
+    }
+
+    public void SwapPositions()
+    {
+        foreach (var item in items)
+        {
+            Vector3 tempPosition = item.transform.position;
+            int rand = Random.Range(0, items.Count - 1);
+            GameObject itemToSwap = items[rand];
+            item.transform.position = itemToSwap.transform.position;
+            itemToSwap.transform.position = tempPosition;
+        }
     }
 
     public void OnInteract(ItemType itemType) {
@@ -105,7 +125,15 @@ public class MiniGame1Manager : MonoBehaviour {
             Debug.Log(currentAnswerCount);
             timeWaited = 0;
             audioSource.Play();
+            SwapPositions();
             TryNextRound();
-        } 
+        }
+        else
+        {
+            if (itemType == ItemType.Start)
+            {
+              StartMiniGame();  
+            }
+        }
     }
 }
