@@ -6,12 +6,9 @@ using UnityEngine;
 
 public class Gate : Interactable
 {
-    Animator animator;
-    GameObject blocker;
+    public Animator animator;
+    public GameObject blocker;
 
-    private void Start() {
-        animator = GetComponent<Animator>();
-    }
 
     public override void OnInteraction(HandManager handManager, PointerEventArgs args) {
         animator.SetTrigger("open");
