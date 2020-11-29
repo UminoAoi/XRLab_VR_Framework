@@ -1,30 +1,23 @@
 fileFormatVersion: 2
-guid: b33103f0716e663468d4022fbbbd9f59
+guid: 78b53738e0942414fafecf62ccf67bb7
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: Camera
-    100002: Cube.001
-    100004: //RootNode
-    100006: Point
+    100002: Cylinder
+    100004: Light
+    100006: //RootNode
     400000: Camera
-    400002: Cube.001
-    400004: //RootNode
-    400006: Point
+    400002: Cylinder
+    400004: Light
+    400006: //RootNode
     2000000: Camera
-    2100000: Material.002
-    2100002: Material.001
-    2100004: Material.003
-    2300000: Cube.001
-    3300000: Cube.001
-    4300000: Cube.001
-    10800000: Point
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.003
-    second: {fileID: 2100000, guid: e3dda07d9b719f84282183ef0b9a6e9b, type: 2}
+    2100000: No Name
+    2300000: Cylinder
+    3300000: Cylinder
+    4300000: Cylinder
+    10800000: Light
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
