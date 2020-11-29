@@ -20,7 +20,8 @@ public class MiniGame1Manager : MonoBehaviour {
     int neededAnswers = 10;
     int currentAnswerCount = 0;
 
-    public GameObject itemsParent;
+    public GameObject itemsParent, itemSpotsParent;
+    public List<Transform> itemSpots;
     private List<GameObject> items;
 
     // Start is called before the first frame update
@@ -29,9 +30,10 @@ public class MiniGame1Manager : MonoBehaviour {
         audioSource = GetComponent<AudioSource>();
         items = new List<GameObject>();
 
-        for(int i = 0; i< itemsParent.transform.childCount; i++) {
+        for(int i = 0; i < itemsParent.transform.childCount; i++) {
             items.Add(itemsParent.transform.GetChild(i).gameObject);
         }
+        itemSpots = new List<Transform>(itemSpotsParent.GetComponentsInChildren<Transform>());
 
         audioSource.clip = instructions;
         audioSource.Play();
@@ -110,12 +112,33 @@ public class MiniGame1Manager : MonoBehaviour {
     {
         foreach (var item in items)
         {
-            Vector3 tempPosition = item.transform.position;
-            int rand = Random.Range(0, items.Count - 1);
-            GameObject itemToSwap = items[rand];
-            item.transform.position = itemToSwap.transform.position;
-            itemToSwap.transform.position = tempPosition;
+            Vector3 lastPosition = item.transform.position;
+            int rand = Random.Range(0, itemSpots.Count - 1);
+            Vector3 newPosition = itemSpots[rand].position;
+            if (isFree(newPosition))
+            {
+                item.transform.position = newPosition;
+            }
+            else
+            {
+                GameObject itemToSwap = items[rand];
+                item.transform.position = itemToSwap.transform.position;
+                itemToSwap.transform.position = lastPosition;
+            }
         }
+    }
+
+    private bool isFree(Vector3 newPosition)
+    {
+        foreach (var item in items)
+        {
+            if (item.transform.position == newPosition)
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     public void OnInteract(ItemType itemType) {
