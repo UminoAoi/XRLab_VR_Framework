@@ -8,6 +8,8 @@ TagManager:
   - FxTemporaire
   - Grabbable
   - Foe
+  - Ebalo
+  - Logic
   layers:
   - Default
   - TransparentFX

@@ -6,12 +6,21 @@ using UnityEngine;
 
 public class Interact : Interactable
 {
-    private void Awake() {
+
+    public GameObject GameLogic;
+    RoomLogic referenceScript;
+
+    private void Awake() 
+    {
+        GameLogic = GameObject.FindGameObjectWithTag("Logic");
+        referenceScript = GameLogic.GetComponent<RoomLogic>();
     }
 
 
     public override void OnInteraction(HandManager handManager, PointerEventArgs args) {
-        Destroy(gameObject);
+        if(gameObject.GetComponent<Foe>().was_seen != 0)
+            Destroy(gameObject);
+            referenceScript.counter++;
     }
 
     public override void OnPointerEnter(HandManager handManager, PointerEventArgs args) {

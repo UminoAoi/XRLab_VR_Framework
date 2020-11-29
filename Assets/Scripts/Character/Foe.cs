@@ -2,6 +2,7 @@
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Foe : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class Foe : MonoBehaviour
      int MoveSpeed = 4;
      int MinDist = 1;
      public int is_selected = 0;
+     public int is_watched = 0;
+     public int was_seen = 0;
  
  
  
@@ -35,9 +38,23 @@ public class Foe : MonoBehaviour
  
              if (Vector3.Distance(transform.position, Player.position) <= MinDist)
              {
-                 //EndGame
+                 SceneManager.LoadScene("1MiniGame");
              }
  
          }
+     }
+
+     void OnTriggerEnter(Collider other)
+     {
+        if(other.gameObject.tag=="Ebalo")
+            is_watched = 1;
+            if(is_selected != 0)
+                was_seen = 1;
+     }
+
+     void OnTriggerExit(Collider other) 
+     {
+        if(other.gameObject.tag=="Ebalo")
+            is_watched = 0;
      }
  }

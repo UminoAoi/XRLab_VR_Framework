@@ -9,6 +9,7 @@ public class RoomLogic : MonoBehaviour
     public GameObject selected;
     public float targetTime;
     Foe referenceScript;
+    public int counter = 0;
 
     public Transform Foe_prefab;
     // Start is called before the first frame update
@@ -20,7 +21,7 @@ public class RoomLogic : MonoBehaviour
             // Debug.Log();
         }
 
-        foes = GameObject.FindGameObjectsWithTag("Foe");
+        // foes = GameObject.FindGameObjectsWithTag("Foe");
 
 
     }
@@ -28,6 +29,9 @@ public class RoomLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(counter == 10)
+            //exitScene
+        foes = GameObject.FindGameObjectsWithTag("Foe");
         targetTime -= Time.deltaTime;
 
         if(targetTime < 0.1f)
@@ -55,9 +59,18 @@ public class RoomLogic : MonoBehaviour
 
     void undead()
     {
-        selected = foes[Random.Range(0, 11)];
-        referenceScript = selected.GetComponent<Foe>();
-        referenceScript.is_selected = 1;
+        while (true)
+        {
+         selected = foes[Random.Range(0, foes.Length)];
+         referenceScript = selected.GetComponent<Foe>();
+         if(referenceScript.is_watched == 0)
+         {
+            referenceScript.is_selected = 1;
+            break;
+         }
+
+        }
+
     }
 
     void killall()
