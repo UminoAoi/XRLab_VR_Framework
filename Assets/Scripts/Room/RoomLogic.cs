@@ -15,7 +15,7 @@ public class RoomLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < 20; i++)
         {
             Instantiate(Foe_prefab, new Vector3(Random.Range(-20.0f, 20.0f), 1, Random.Range(-20.0f, 20.0f)), Quaternion.identity);
             // Debug.Log();
@@ -29,9 +29,11 @@ public class RoomLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(counter == 10)
-            //exitScene
         foes = GameObject.FindGameObjectsWithTag("Foe");
+        if(counter == 10)
+        {
+                        //exitScene
+        }
         targetTime -= Time.deltaTime;
 
         if(targetTime < 0.1f)
@@ -40,7 +42,7 @@ public class RoomLogic : MonoBehaviour
             updateTime();
         }
 
-        if((targetTime < 1.0f) && referenceScript != null && (referenceScript.is_selected == 0))
+        if((targetTime < 1.5f) && referenceScript == null)
         {
             undead();
             Debug.Log("ASS");
@@ -61,6 +63,7 @@ public class RoomLogic : MonoBehaviour
     {
         while (true)
         {
+         Debug.Log(foes.Length);
          selected = foes[Random.Range(0, foes.Length)];
          referenceScript = selected.GetComponent<Foe>();
          if(referenceScript.is_watched == 0)
@@ -80,5 +83,6 @@ public class RoomLogic : MonoBehaviour
             referenceScript = Foee.GetComponent<Foe>();
             referenceScript.is_selected = 0;
         }
+        referenceScript = null;
     }
 }

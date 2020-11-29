@@ -29,7 +29,7 @@ public class Foe : MonoBehaviour
      {
          transform.LookAt(Player);
  
-         if ((Vector3.Distance(transform.position, Player.position) >= MinDist) && (is_selected != 0))
+         if ((Vector3.Distance(transform.position, Player.position) >= 1) && (is_selected != 0))
          {
  
              transform.position += transform.forward * MoveSpeed * Time.deltaTime;
