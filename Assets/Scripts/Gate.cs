@@ -9,6 +9,10 @@ public class Gate : Interactable
     Animator animator;
     GameObject blocker;
 
+    private void Start() {
+        animator = GetComponent<Animator>();
+    }
+
     public override void OnInteraction(HandManager handManager, PointerEventArgs args) {
         animator.SetTrigger("open");
         blocker.SetActive(false);
