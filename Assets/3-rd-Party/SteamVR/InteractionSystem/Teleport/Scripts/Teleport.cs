@@ -4,11 +4,15 @@
 //
 //=============================================================================
 
+using System.Collections;
+using Assets.SteamVR.Input;
+using Assets.SteamVR.InteractionSystem.Core.Scripts;
+using Assets.SteamVR.InteractionSystem.Hints.Scripts;
+using Assets.SteamVR.Scripts;
 using UnityEngine;
 using UnityEngine.Events;
-using System.Collections;
 
-namespace Valve.VR.InteractionSystem
+namespace Assets.SteamVR.InteractionSystem.Teleport.Scripts
 {
 	//-------------------------------------------------------------------------
 	public class Teleport : MonoBehaviour
@@ -173,7 +177,7 @@ namespace Valve.VR.InteractionSystem
 
 			HidePointer();
 
-			player = InteractionSystem.Player.instance;
+			player = Core.Scripts.Player.instance;
 
 			if ( player == null )
 			{
@@ -1090,7 +1094,7 @@ namespace Valve.VR.InteractionSystem
 			{
 				if ( hand.noSteamVRFallbackCamera != null )
 				{
-					return Input.GetKeyUp( KeyCode.T );
+					return UnityEngine.Input.GetKeyUp( KeyCode.T );
 				}
 				else
                 {
@@ -1110,7 +1114,7 @@ namespace Valve.VR.InteractionSystem
 			{
 				if ( hand.noSteamVRFallbackCamera != null )
 				{
-					return Input.GetKey( KeyCode.T );
+					return UnityEngine.Input.GetKey( KeyCode.T );
 				}
 				else
                 {
@@ -1129,7 +1133,7 @@ namespace Valve.VR.InteractionSystem
 			{
 				if ( hand.noSteamVRFallbackCamera != null )
 				{
-					return Input.GetKeyDown( KeyCode.T );
+					return UnityEngine.Input.GetKeyDown( KeyCode.T );
 				}
 				else
                 {

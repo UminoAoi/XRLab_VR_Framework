@@ -1,23 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using UnityEditor;
-using UnityEngine;
-
 using System.CodeDom;
-using Microsoft.CSharp;
-using System.IO;
 using System.CodeDom.Compiler;
-
-using System.Reflection;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Linq.Expressions;
-using UnityEditor.SceneManagement;
+using System.Reflection;
+using Assets.SteamVR.Scripts;
+using Microsoft.CSharp;
+using UnityEditor;
 using UnityEditor.Callbacks;
+using UnityEditor.SceneManagement;
+using UnityEngine;
 using Valve.Newtonsoft.Json;
 
-namespace Valve.VR
+namespace Assets.SteamVR.Input.Editor
 {
 #pragma warning disable 0219 // variable assigned but not used.
 
@@ -336,7 +333,7 @@ namespace Valve.VR
 
         private static string GetClassPath()
         {
-            string path = Path.Combine(SteamVR.GetSteamVRFolderParentPath(), SteamVR_Settings.instance.steamVRInputPath);
+            string path = Path.Combine(Scripts.SteamVR.GetSteamVRFolderParentPath(), SteamVR_Settings.instance.steamVRInputPath);
 
             if (Directory.Exists(path) == false)
                 Directory.CreateDirectory(path);

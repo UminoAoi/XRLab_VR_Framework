@@ -1,14 +1,13 @@
 ﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
 
-using UnityEngine;
-using System.Collections;
 using System;
-using Valve.VR;
-using System.Runtime.InteropServices;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using System.Text;
+using Assets.SteamVR.Plugins;
+using UnityEngine;
 
-namespace Valve.VR
+namespace Assets.SteamVR.Input
 {
     /// <summary>
     /// Action sets are logical groupings of actions. Multiple sets can be active at one time.

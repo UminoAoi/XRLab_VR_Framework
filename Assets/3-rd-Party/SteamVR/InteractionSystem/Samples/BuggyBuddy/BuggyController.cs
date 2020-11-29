@@ -1,11 +1,10 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
+using Assets.SteamVR.Input;
+using Assets.SteamVR.InteractionSystem.Core.Scripts;
 using UnityEngine;
 using UnityEngine.UI;
-using Valve.VR;
-using Valve.VR.InteractionSystem;
 
-namespace Valve.VR.InteractionSystem.Sample
+namespace Assets.SteamVR.InteractionSystem.Samples.BuggyBuddy
 {
     public class BuggyController : MonoBehaviour
     {

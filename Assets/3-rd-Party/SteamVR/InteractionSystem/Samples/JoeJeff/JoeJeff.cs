@@ -1,8 +1,8 @@
-﻿using UnityEngine;
-using System.Collections;
-using Valve.VR.InteractionSystem;
+﻿using Assets.SteamVR.InteractionSystem.Core.Scripts;
+using Assets.SteamVR.InteractionSystem.Longbow.Scripts;
+using UnityEngine;
 
-namespace Valve.VR.InteractionSystem.Sample
+namespace Assets.SteamVR.InteractionSystem.Samples.JoeJeff
 {
     public class JoeJeff : MonoBehaviour
     {

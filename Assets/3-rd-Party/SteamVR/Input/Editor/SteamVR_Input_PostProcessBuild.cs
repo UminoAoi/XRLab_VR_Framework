@@ -1,14 +1,13 @@
-﻿using UnityEngine;
+﻿using System.IO;
+using Assets.SteamVR.Scripts;
 using UnityEditor;
-using System.Collections;
 using UnityEditor.Callbacks;
-using System.IO;
 
-namespace Valve.VR
+namespace Assets.SteamVR.Input.Editor
 {
     public class SteamVR_Input_PostProcessBuild
     {
-        [PostProcessBuildAttribute(1)]
+        [PostProcessBuild(1)]
         public static void OnPostprocessBuild(BuildTarget target, string pathToBuiltProject)
         {
             

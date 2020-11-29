@@ -4,11 +4,11 @@
 //
 //=============================================================================
 
-using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
+using Assets.SteamVR.Input;
+using UnityEngine;
 
-namespace Valve.VR.InteractionSystem
+namespace Assets.SteamVR.InteractionSystem.Core.Scripts
 {
 	//-------------------------------------------------------------------------
 	// Singleton representing the local VR player/user, with methods for getting
@@ -264,10 +264,10 @@ namespace Valve.VR.InteractionSystem
 		{
 			_instance = this;
 
-            while (SteamVR.initializedState == SteamVR.InitializedStates.None || SteamVR.initializedState == SteamVR.InitializedStates.Initializing)
+            while (SteamVR.Scripts.SteamVR.initializedState == SteamVR.Scripts.SteamVR.InitializedStates.None || SteamVR.Scripts.SteamVR.initializedState == SteamVR.Scripts.SteamVR.InitializedStates.Initializing)
                 yield return null;
 
-			if ( SteamVR.instance != null )
+			if ( SteamVR.Scripts.SteamVR.instance != null )
 			{
 				ActivateRig( rigSteamVR );
 			}
@@ -281,7 +281,7 @@ namespace Valve.VR.InteractionSystem
 
         protected virtual void Update()
         {
-            if (SteamVR.initializedState != SteamVR.InitializedStates.InitializeSuccess)
+            if (SteamVR.Scripts.SteamVR.initializedState != SteamVR.Scripts.SteamVR.InitializedStates.InitializeSuccess)
                 return;
 
             if (headsetOnHead != null)
@@ -368,7 +368,7 @@ namespace Valve.VR.InteractionSystem
 			if ( !allowToggleTo2D )
 				return;
 
-			if ( !SteamVR.active )
+			if ( !SteamVR.Scripts.SteamVR.active )
 				return;
 
 			int width = 100;

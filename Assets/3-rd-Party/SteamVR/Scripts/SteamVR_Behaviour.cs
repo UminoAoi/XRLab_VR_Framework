@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections;
+using Assets.SteamVR.Input;
+using Assets.SteamVR.Plugins;
 using UnityEngine;
-
+using UnityEngine.XR;
 #if UNITY_2017_2_OR_NEWER
-    using UnityEngine.XR;
+
 #else
 using XRSettings = UnityEngine.VR.VRSettings;
 using XRDevice = UnityEngine.VR.VRDevice;
 #endif
 
-namespace Valve.VR
+namespace Assets.SteamVR.Scripts
 {
     public class SteamVR_Behaviour : MonoBehaviour
     {

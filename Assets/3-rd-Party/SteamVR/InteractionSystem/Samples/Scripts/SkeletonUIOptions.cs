@@ -1,10 +1,11 @@
 ﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
 
+using Assets.SteamVR.Input;
+using Assets.SteamVR.InteractionSystem.Core.Scripts;
+using Assets.SteamVR.Plugins;
 using UnityEngine;
-using System.Collections;
-using Valve.VR.InteractionSystem;
 
-namespace Valve.VR.InteractionSystem.Sample
+namespace Assets.SteamVR.InteractionSystem.Samples.Scripts
 {
     public class SkeletonUIOptions : MonoBehaviour
     {
@@ -16,7 +17,7 @@ namespace Valve.VR.InteractionSystem.Sample
                 Hand hand = Player.instance.hands[handIndex];
                 if (hand != null)
                 {
-                    hand.SetSkeletonRangeOfMotion(Valve.VR.EVRSkeletalMotionRange.WithController);
+                    hand.SetSkeletonRangeOfMotion(EVRSkeletalMotionRange.WithController);
                 }
             }
         }
@@ -28,7 +29,7 @@ namespace Valve.VR.InteractionSystem.Sample
                 Hand hand = Player.instance.hands[handIndex];
                 if (hand != null)
                 {
-                    hand.SetSkeletonRangeOfMotion(Valve.VR.EVRSkeletalMotionRange.WithoutController);
+                    hand.SetSkeletonRangeOfMotion(EVRSkeletalMotionRange.WithoutController);
                 }
             }
         }

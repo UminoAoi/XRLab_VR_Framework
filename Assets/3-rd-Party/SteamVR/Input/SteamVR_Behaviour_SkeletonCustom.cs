@@ -1,9 +1,8 @@
 ﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
 
 using UnityEngine;
-using Valve.VR;
 
-namespace Valve.VR
+namespace Assets.SteamVR.Input
 {
     /// <summary>
     /// The major difference between this component and the standard SteamVR_Behaviour_Skeleton is this one lets you

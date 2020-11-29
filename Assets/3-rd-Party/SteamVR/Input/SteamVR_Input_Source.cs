@@ -1,15 +1,12 @@
 ﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
 
-using UnityEngine;
-using System.Collections;
 using System;
-using Valve.VR;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.ComponentModel;
 using System.Collections.Generic;
+using System.ComponentModel;
+using Assets.SteamVR.Plugins;
+using UnityEngine;
 
-namespace Valve.VR
+namespace Assets.SteamVR.Input
 {
     public static class SteamVR_Input_Source
     {

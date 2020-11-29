@@ -1,7 +1,7 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using UnityEngine;
 
-namespace Valve.VR.Extras
+namespace Assets.SteamVR.Extras
 {
     /// <summary>
     /// This is an example class of how to force steamvr initialization. You still need to have vr mode enabled
@@ -17,9 +17,9 @@ namespace Valve.VR.Extras
         {
             yield return new WaitForSeconds(1f); // just here to show that you can wait a while.
 
-            SteamVR.Initialize(true);
+            Scripts.SteamVR.Initialize(true);
 
-            while (SteamVR.initializedState != SteamVR.InitializedStates.InitializeSuccess)
+            while (Scripts.SteamVR.initializedState != Scripts.SteamVR.InitializedStates.InitializeSuccess)
                 yield return null;
 
             for (int disableIndex = 0; disableIndex < disableObjectsOnLoad.Length; disableIndex++)

@@ -1,11 +1,10 @@
 ﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
 
 using System.Collections;
-using System.Collections.Generic;
+using Assets.SteamVR.InteractionSystem.Core.Scripts;
 using UnityEngine;
-using Valve.VR.InteractionSystem;
 
-namespace Valve.VR.InteractionSystem.Sample
+namespace Assets.SteamVR.InteractionSystem.Samples.Scripts
 {
     public class FlowerPlanted : MonoBehaviour
     {

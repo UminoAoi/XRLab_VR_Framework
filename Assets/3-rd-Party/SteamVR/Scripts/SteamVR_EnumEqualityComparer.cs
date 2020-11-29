@@ -3,8 +3,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using Assets.SteamVR.Input;
 
-namespace Valve.VR
+namespace Assets.SteamVR.Scripts
 {
     struct SteamVREnumEqualityComparer<TEnum> : IEqualityComparer<TEnum> where TEnum : struct
     {

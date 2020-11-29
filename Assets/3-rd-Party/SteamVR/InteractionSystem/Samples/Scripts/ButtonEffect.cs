@@ -1,11 +1,9 @@
 ﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
 
+using Assets.SteamVR.InteractionSystem.Core.Scripts;
 using UnityEngine;
-using System.Collections;
-using UnityEngine.SceneManagement;
-using System;
 
-namespace Valve.VR.InteractionSystem.Sample
+namespace Assets.SteamVR.InteractionSystem.Samples.Scripts
 {
     public class ButtonEffect : MonoBehaviour
     {

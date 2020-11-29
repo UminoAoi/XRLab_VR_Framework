@@ -4,15 +4,19 @@
 //
 //=============================================================================
 
-using UnityEngine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using Assets.SteamVR.Input;
+using Assets.SteamVR.InteractionSystem.Hints.Scripts;
+using Assets.SteamVR.InteractionSystem.Teleport.Scripts;
+using Assets.SteamVR.Plugins;
+using Assets.SteamVR.Scripts;
+using UnityEngine;
 using UnityEngine.Events;
-using System.Threading;
 
-namespace Valve.VR.InteractionSystem
+namespace Assets.SteamVR.InteractionSystem.Core.Scripts
 {
     //-------------------------------------------------------------------------
     // Links with an appropriate SteamVR controller and facilitates
@@ -987,7 +991,7 @@ namespace Valve.VR.InteractionSystem
         {
             if (noSteamVRFallbackCamera)
             {
-                Ray ray = noSteamVRFallbackCamera.ScreenPointToRay(Input.mousePosition);
+                Ray ray = noSteamVRFallbackCamera.ScreenPointToRay(UnityEngine.Input.mousePosition);
 
                 if (attachedObjects.Count > 0)
                 {
@@ -1457,7 +1461,7 @@ namespace Valve.VR.InteractionSystem
             {
                 if (noSteamVRFallbackCamera)
                 {
-                    if (Input.GetMouseButtonDown(0))
+                    if (UnityEngine.Input.GetMouseButtonDown(0))
                         return explicitType;
                     else
                         return GrabTypes.None;
@@ -1472,7 +1476,7 @@ namespace Valve.VR.InteractionSystem
             {
                 if (noSteamVRFallbackCamera)
                 {
-                    if (Input.GetMouseButtonDown(0))
+                    if (UnityEngine.Input.GetMouseButtonDown(0))
                         return GrabTypes.Grip;
                     else
                         return GrabTypes.None;
@@ -1493,7 +1497,7 @@ namespace Valve.VR.InteractionSystem
             {
                 if (noSteamVRFallbackCamera)
                 {
-                    if (Input.GetMouseButtonUp(0))
+                    if (UnityEngine.Input.GetMouseButtonUp(0))
                         return explicitType;
                     else
                         return GrabTypes.None;
@@ -1508,7 +1512,7 @@ namespace Valve.VR.InteractionSystem
             {
                 if (noSteamVRFallbackCamera)
                 {
-                    if (Input.GetMouseButtonUp(0))
+                    if (UnityEngine.Input.GetMouseButtonUp(0))
                         return GrabTypes.Grip;
                     else
                         return GrabTypes.None;
@@ -1540,7 +1544,7 @@ namespace Valve.VR.InteractionSystem
         {
             if (noSteamVRFallbackCamera)
             {
-                if (Input.GetMouseButton(0))
+                if (UnityEngine.Input.GetMouseButton(0))
                     return true;
                 else
                     return false;
@@ -1563,7 +1567,7 @@ namespace Valve.VR.InteractionSystem
         {
             if (noSteamVRFallbackCamera)
             {
-                if (Input.GetMouseButton(0))
+                if (UnityEngine.Input.GetMouseButton(0))
                     return true;
                 else
                     return false;
@@ -1591,7 +1595,7 @@ namespace Valve.VR.InteractionSystem
         {
             if (noSteamVRFallbackCamera)
             {
-                if (Input.GetMouseButton(0))
+                if (UnityEngine.Input.GetMouseButton(0))
                     return preferred;
                 else
                     return GrabTypes.None;

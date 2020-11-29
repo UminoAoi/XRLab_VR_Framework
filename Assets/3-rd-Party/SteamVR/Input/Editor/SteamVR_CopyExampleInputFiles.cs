@@ -1,13 +1,10 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.IO;
 using UnityEditor;
-using System;
-using System.Linq;
-using System.IO;
+using UnityEngine;
 
-namespace Valve.VR
+namespace Assets.SteamVR.Input.Editor
 {
-    public class SteamVR_CopyExampleInputFiles : Editor
+    public class SteamVR_CopyExampleInputFiles : UnityEditor.Editor
     {
         public const string steamVRInputExampleJSONCopiedKey = "SteamVR_Input_CopiedExamples";
 
@@ -30,7 +27,7 @@ namespace Valve.VR
                 bool exists = File.Exists(actionsFilePath);
                 if (exists == false)
                 {
-                    string steamVRFolder = SteamVR.GetSteamVRFolderPath();
+                    string steamVRFolder = Scripts.SteamVR.GetSteamVRFolderPath();
                     string exampleLocation = Path.Combine(steamVRFolder, exampleJSONFolderParent);
                     string exampleFolderPath = Path.Combine(exampleLocation, exampleJSONFolderName);
 

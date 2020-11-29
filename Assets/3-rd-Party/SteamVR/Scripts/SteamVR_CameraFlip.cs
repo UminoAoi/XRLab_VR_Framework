@@ -6,7 +6,7 @@
 
 using UnityEngine;
 
-namespace Valve.VR
+namespace Assets.SteamVR.Scripts
 {
     [ExecuteInEditMode]
     public class SteamVR_CameraFlip : MonoBehaviour

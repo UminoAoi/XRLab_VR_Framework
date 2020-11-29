@@ -4,13 +4,13 @@
 //
 //=============================================================================
 
-using UnityEngine;
-using UnityEditor;
-using System.IO;
 using System.Collections.Generic;
 using System.Linq;
+using Assets.SteamVR.Scripts;
+using UnityEditor;
+using UnityEngine;
 
-namespace Valve.VR
+namespace Assets.SteamVR.Editor
 {
     [InitializeOnLoad]
     public class SteamVR_AutoEnableVR

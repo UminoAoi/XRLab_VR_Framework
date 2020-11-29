@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿using Assets.SteamVR.Input;
+using Assets.SteamVR.InteractionSystem.Core.Scripts;
 using UnityEngine;
 
-namespace Valve.VR.InteractionSystem.Sample
+namespace Assets.SteamVR.InteractionSystem.Samples.JoeJeff
 {
     public class JoeJeffGestures : MonoBehaviour
     {

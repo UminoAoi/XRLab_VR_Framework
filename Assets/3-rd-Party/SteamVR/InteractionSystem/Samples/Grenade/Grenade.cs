@@ -1,7 +1,7 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using Assets.SteamVR.InteractionSystem.Core.Scripts;
+using UnityEngine;
 
-namespace Valve.VR.InteractionSystem.Sample
+namespace Assets.SteamVR.InteractionSystem.Samples.Grenade
 {
     public class Grenade : MonoBehaviour
     {

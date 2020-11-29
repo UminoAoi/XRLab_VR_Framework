@@ -4,10 +4,10 @@
 //
 //=============================================================================
 
+using Assets.SteamVR.Plugins;
 using UnityEngine;
-using Valve.VR;
 
-namespace Valve.VR
+namespace Assets.SteamVR.Scripts
 {
     public class SteamVR_Menu : MonoBehaviour
     {
@@ -203,7 +203,7 @@ namespace Valve.VR
 
             if (cursor != null)
             {
-                float x = Input.mousePosition.x, y = Screen.height - Input.mousePosition.y;
+                float x = UnityEngine.Input.mousePosition.x, y = Screen.height - UnityEngine.Input.mousePosition.y;
                 float w = cursor.width, h = cursor.height;
                 GUI.DrawTexture(new Rect(x, y, w, h), cursor);
             }
@@ -271,7 +271,7 @@ namespace Valve.VR
 
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button7))
+            if (UnityEngine.Input.GetKeyDown(KeyCode.Escape) || UnityEngine.Input.GetKeyDown(KeyCode.Joystick1Button7))
             {
                 if (overlay == null)
                 {
@@ -282,15 +282,15 @@ namespace Valve.VR
                     HideMenu();
                 }
             }
-            else if (Input.GetKeyDown(KeyCode.Home))
+            else if (UnityEngine.Input.GetKeyDown(KeyCode.Home))
             {
                 SetScale(1.0f);
             }
-            else if (Input.GetKey(KeyCode.PageUp))
+            else if (UnityEngine.Input.GetKey(KeyCode.PageUp))
             {
                 SetScale(Mathf.Clamp(scale + scaleRate * Time.deltaTime, scaleLimits.x, scaleLimits.y));
             }
-            else if (Input.GetKey(KeyCode.PageDown))
+            else if (UnityEngine.Input.GetKey(KeyCode.PageDown))
             {
                 SetScale(Mathf.Clamp(scale - scaleRate * Time.deltaTime, scaleLimits.x, scaleLimits.y));
             }
