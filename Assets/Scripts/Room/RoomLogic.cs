@@ -15,7 +15,7 @@ public class RoomLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < 20; i++)
+        for (int i = 0; i < 5; i++)
         {
             Instantiate(Foe_prefab, new Vector3(Random.Range(-20.0f, 20.0f), 1, Random.Range(-20.0f, 20.0f)), Quaternion.identity);
             // Debug.Log();
@@ -63,7 +63,6 @@ public class RoomLogic : MonoBehaviour
     {
         while (true)
         {
-         Debug.Log(foes.Length);
          selected = foes[Random.Range(0, foes.Length)];
          referenceScript = selected.GetComponent<Foe>();
          if(referenceScript.is_watched == 0)

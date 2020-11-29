@@ -20,8 +20,6 @@ public class Foe : MonoBehaviour
      void Start()
      {
         Scene scene = gameObject.scene;
-        Debug.Log(gameObject.name + " is from the Scene: " + scene.name);
-        Debug.Log(scene.GetRootGameObjects()[1].name);
         // Player = GameObject.FindWithTag("Player").transform;
      }
  
@@ -38,14 +36,17 @@ public class Foe : MonoBehaviour
  
              if (Vector3.Distance(transform.position, Player.position) <= MinDist)
              {
-                 SceneManager.LoadScene("1MiniGame");
+                 SceneManager.LoadScene("3MiniGame");
              }
  
          }
      }
+         
+     
 
      void OnTriggerEnter(Collider other)
      {
+        Debug.Log("POOP");
         if(other.gameObject.tag=="Ebalo")
             is_watched = 1;
             if(is_selected != 0)
