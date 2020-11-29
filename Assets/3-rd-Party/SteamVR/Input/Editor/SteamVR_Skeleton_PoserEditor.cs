@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿using Assets.SteamVR.Plugins;
+using Assets.SteamVR.Scripts;
 using UnityEditor;
 using UnityEngine;
 
-namespace Valve.VR
+namespace Assets.SteamVR.Input.Editor
 {
 
     [CustomEditor(typeof(SteamVR_Skeleton_Poser))]
-    public class SteamVR_Skeleton_PoserEditor : Editor
+    public class SteamVR_Skeleton_PoserEditor : UnityEditor.Editor
     {
         private SerializedProperty skeletonMainPoseProperty;
         private SerializedProperty skeletonAdditionalPosesProperty;

@@ -4,10 +4,10 @@
 //
 //=============================================================================
 
+using Assets.SteamVR.Plugins;
 using UnityEngine;
-using Valve.VR;
 
-namespace Valve.VR
+namespace Assets.SteamVR.Scripts
 {
     [ExecuteInEditMode, RequireComponent(typeof(MeshRenderer), typeof(MeshFilter))]
     public class SteamVR_Frustum : MonoBehaviour

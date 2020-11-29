@@ -1,13 +1,11 @@
 ﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
 
-using UnityEngine;
-using System.Collections;
 using System;
-using Valve.VR;
 using System.Runtime.InteropServices;
-using System.Collections.Generic;
+using Assets.SteamVR.Plugins;
+using UnityEngine;
 
-namespace Valve.VR
+namespace Assets.SteamVR.Input
 {
     [Serializable]
     /// <summary>
@@ -572,7 +570,7 @@ namespace Valve.VR
             if (framesAhead == 0)
                 err = OpenVR.Input.GetPoseActionDataForNextFrame(handle, universeOrigin, ref poseActionData, poseActionData_size, inputSourceHandle);
             else
-                err = OpenVR.Input.GetPoseActionDataRelativeToNow(handle, universeOrigin, framesAhead * (Time.timeScale / SteamVR.instance.hmd_DisplayFrequency), ref poseActionData, poseActionData_size, inputSourceHandle);
+                err = OpenVR.Input.GetPoseActionDataRelativeToNow(handle, universeOrigin, framesAhead * (Time.timeScale / Scripts.SteamVR.instance.hmd_DisplayFrequency), ref poseActionData, poseActionData_size, inputSourceHandle);
 
             if (err != EVRInputError.None)
             {

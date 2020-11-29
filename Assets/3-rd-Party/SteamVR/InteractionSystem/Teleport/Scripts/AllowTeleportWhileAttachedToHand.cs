@@ -7,7 +7,7 @@
 
 using UnityEngine;
 
-namespace Valve.VR.InteractionSystem
+namespace Assets.SteamVR.InteractionSystem.Teleport.Scripts
 {
 	//-------------------------------------------------------------------------
 	public class AllowTeleportWhileAttachedToHand : MonoBehaviour

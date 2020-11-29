@@ -1,14 +1,10 @@
 ﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+using Assets.SteamVR.Input.BehaviourUnityEvents;
+using Assets.SteamVR.Plugins;
 using UnityEngine;
-using UnityEngine.Events;
 
-namespace Valve.VR
+namespace Assets.SteamVR.Input
 {
     /// <summary>
     /// Simplifies the use of the Vector2 action. Provides an onChange event that fires whenever the vector2 changes.

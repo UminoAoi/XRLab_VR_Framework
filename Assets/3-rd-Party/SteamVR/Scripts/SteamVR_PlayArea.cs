@@ -4,12 +4,12 @@
 //
 //=============================================================================
 
+using System.Collections;
+using Assets.SteamVR.Plugins;
 using UnityEngine;
 using UnityEngine.Rendering;
-using System.Collections;
-using Valve.VR;
 
-namespace Valve.VR
+namespace Assets.SteamVR.Scripts
 {
     [ExecuteInEditMode, RequireComponent(typeof(MeshRenderer), typeof(MeshFilter))]
     public class SteamVR_PlayArea : MonoBehaviour

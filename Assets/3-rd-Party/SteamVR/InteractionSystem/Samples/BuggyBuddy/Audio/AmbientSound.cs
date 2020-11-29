@@ -1,8 +1,7 @@
-﻿using UnityEngine;
-using System.Collections;
-using Valve.VR;
+﻿using Assets.SteamVR.Scripts;
+using UnityEngine;
 
-namespace Valve.VR.InteractionSystem.Sample
+namespace Assets.SteamVR.InteractionSystem.Samples.BuggyBuddy.Audio
 {
     public class AmbientSound : MonoBehaviour
     {

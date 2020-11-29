@@ -1,9 +1,9 @@
 ﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
 
+using Assets.SteamVR.Input;
 using UnityEngine;
-using System.Collections;
 
-namespace Valve.VR.InteractionSystem.Sample
+namespace Assets.SteamVR.InteractionSystem.Samples.Scripts
 {
     public class FloppyHand : MonoBehaviour
     {

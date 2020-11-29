@@ -4,19 +4,18 @@
 //
 //=============================================================================
 
-using UnityEngine;
 using System.Collections;
 using System.Reflection;
-using Valve.VR;
-
+using UnityEngine;
+using UnityEngine.XR;
 #if UNITY_2017_2_OR_NEWER
-    using UnityEngine.XR;
+
 #else
 using XRSettings = UnityEngine.VR.VRSettings;
 using XRDevice = UnityEngine.VR.VRDevice;
 #endif
 
-namespace Valve.VR
+namespace Assets.SteamVR.Scripts
 {
     [RequireComponent(typeof(Camera))]
     public class SteamVR_Camera : MonoBehaviour

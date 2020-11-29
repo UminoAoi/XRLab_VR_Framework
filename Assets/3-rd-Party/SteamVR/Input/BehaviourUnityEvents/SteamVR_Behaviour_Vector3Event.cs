@@ -4,7 +4,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Valve.VR
+namespace Assets.SteamVR.Input.BehaviourUnityEvents
 {
     [Serializable]
     public class SteamVR_Behaviour_Vector3Event : UnityEvent<SteamVR_Behaviour_Vector3, SteamVR_Input_Sources, Vector3, Vector3> { }

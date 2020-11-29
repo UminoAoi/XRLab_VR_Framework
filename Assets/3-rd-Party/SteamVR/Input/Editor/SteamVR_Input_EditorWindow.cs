@@ -1,20 +1,14 @@
-﻿using UnityEditor;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Reflection;
+using Assets.SteamVR.Scripts;
+using UnityEditor;
+using UnityEditorInternal;
 using UnityEngine;
 
-using System.CodeDom;
-using Microsoft.CSharp;
-using System.IO;
-using System.CodeDom.Compiler;
-
-using System.Linq;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Linq.Expressions;
-using System;
-using UnityEditorInternal;
-using Valve.Newtonsoft.Json;
-
-namespace Valve.VR
+namespace Assets.SteamVR.Input.Editor
 {
 #pragma warning disable 0219 // variable assigned but not used.
     public class SteamVR_Input_EditorWindow : EditorWindow
@@ -519,7 +513,7 @@ namespace Valve.VR
                 }
             }
 
-            SteamVR.ShowBindingsForEditor();
+            Scripts.SteamVR.ShowBindingsForEditor();
         }
 
         private bool HasBeenModified()
@@ -999,7 +993,7 @@ namespace Valve.VR
             }
 
             if (folderName == null)
-                folderName = "SteamVR_" + SteamVR.GenerateCleanProductName();
+                folderName = "SteamVR_" + Scripts.SteamVR.GenerateCleanProductName();
 
             SteamVR_Input.InitializeFile();
             EditorGUILayout.Space();

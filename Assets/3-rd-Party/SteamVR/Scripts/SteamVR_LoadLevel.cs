@@ -4,12 +4,12 @@
 //
 //=============================================================================
 
-using UnityEngine;
 using System.Collections;
-using Valve.VR;
 using System.IO;
+using Assets.SteamVR.Plugins;
+using UnityEngine;
 
-namespace Valve.VR
+namespace Assets.SteamVR.Scripts
 {
     public class SteamVR_LoadLevel : MonoBehaviour
     {

@@ -4,11 +4,12 @@
 //
 //=============================================================================
 
+using System.Collections;
+using Assets.SteamVR.InteractionSystem.Core.Scripts;
 using UnityEngine;
 using UnityEngine.Events;
-using System.Collections;
 
-namespace Valve.VR.InteractionSystem
+namespace Assets.SteamVR.InteractionSystem.Longbow.Scripts
 {
 	//-------------------------------------------------------------------------
 	public class ArcheryTarget : MonoBehaviour

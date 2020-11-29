@@ -4,19 +4,20 @@
 //
 //=============================================================================
 
-using UnityEngine;
-using Valve.VR;
 using System.IO;
 using System.Linq;
-
+using Assets.SteamVR.Input;
+using Assets.SteamVR.Plugins;
+using UnityEngine;
+using UnityEngine.XR;
 #if UNITY_2017_2_OR_NEWER
-    using UnityEngine.XR;
+
 #else
 using XRSettings = UnityEngine.VR.VRSettings;
 using XRDevice = UnityEngine.VR.VRDevice;
 #endif
 
-namespace Valve.VR
+namespace Assets.SteamVR.Scripts
 {
     public class SteamVR : System.IDisposable
     {
@@ -354,10 +355,10 @@ namespace Valve.VR
             bool temporarySession = InitializeTemporarySession(false);
 
 
-            Valve.VR.EVRSettingsError bindingFlagError = Valve.VR.EVRSettingsError.None;
-            Valve.VR.OpenVR.Settings.SetBool(Valve.VR.OpenVR.k_pch_SteamVR_Section, Valve.VR.OpenVR.k_pch_SteamVR_DebugInputBinding, true, ref bindingFlagError);
+            EVRSettingsError bindingFlagError = EVRSettingsError.None;
+            OpenVR.Settings.SetBool(OpenVR.k_pch_SteamVR_Section, OpenVR.k_pch_SteamVR_DebugInputBinding, true, ref bindingFlagError);
 
-            if (bindingFlagError != Valve.VR.EVRSettingsError.None)
+            if (bindingFlagError != EVRSettingsError.None)
                 Debug.LogError("<b>[SteamVR]</b> Error turning on the debug input binding flag in steamvr: " + bindingFlagError.ToString());
 
             if (Application.isPlaying == false)

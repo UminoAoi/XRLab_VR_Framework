@@ -1,6 +1,6 @@
 ﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
 
-namespace Valve.VR
+namespace Assets.SteamVR.Input
 {
     /// <summary>
     /// The direction the the action. In actions get input, Out actions send input.

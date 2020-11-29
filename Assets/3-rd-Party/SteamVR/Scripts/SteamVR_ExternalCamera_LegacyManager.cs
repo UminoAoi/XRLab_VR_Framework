@@ -4,10 +4,9 @@
 //
 //=============================================================================
 
-using UnityEngine;
-using System.Collections;
+using Assets.SteamVR.Plugins;
 
-namespace Valve.VR
+namespace Assets.SteamVR.Scripts
 {
     public class SteamVR_ExternalCamera_LegacyManager
     {

@@ -1,8 +1,10 @@
 ﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
-using UnityEngine;
-using System.Collections;
 
-namespace Valve.VR.Extras
+using Assets.SteamVR.Input;
+using Assets.SteamVR.Scripts;
+using UnityEngine;
+
+namespace Assets.SteamVR.Extras
 {
     [RequireComponent(typeof(SteamVR_TrackedObject))]
     public class SteamVR_TestThrow : MonoBehaviour

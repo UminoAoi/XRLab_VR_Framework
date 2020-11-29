@@ -4,12 +4,12 @@
 //
 //=============================================================================
 
-using UnityEngine;
 using System.Collections;
-using Valve.VR;
+using Assets.SteamVR.Input;
+using Assets.SteamVR.Plugins;
+using UnityEngine;
 
-
-namespace Valve.VR
+namespace Assets.SteamVR.Scripts
 {
     public class SteamVR_Render : MonoBehaviour
     {

@@ -20,10 +20,10 @@
 //
 //=============================================================================
 
+using Assets.SteamVR.Plugins;
 using UnityEngine;
-using Valve.VR;
 
-namespace Valve.VR
+namespace Assets.SteamVR.Scripts
 {
     public class SteamVR_TrackedCamera
     {

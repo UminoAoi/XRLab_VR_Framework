@@ -1,16 +1,16 @@
 ﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
 
-using UnityEngine;
-using Valve.VR;
-using System.IO;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Reflection;
-using System.Linq;
-using Valve.Newtonsoft.Json;
 using System.Text;
+using Assets.SteamVR.Plugins;
+using Assets.SteamVR.Scripts;
+using UnityEngine;
+using Valve.Newtonsoft.Json;
 
-namespace Valve.VR
+namespace Assets.SteamVR.Input
 {
     public partial class SteamVR_Input
     {
@@ -234,11 +234,11 @@ namespace Valve.VR
             if (initialized == false || isStartupFrame)
                 return;
 
-            if (SteamVR.settings.IsInputUpdateMode(SteamVR_UpdateModes.OnUpdate))
+            if (Scripts.SteamVR.settings.IsInputUpdateMode(SteamVR_UpdateModes.OnUpdate))
             {
                 UpdateNonVisualActions();
             }
-            if (SteamVR.settings.IsPoseUpdateMode(SteamVR_UpdateModes.OnUpdate))
+            if (Scripts.SteamVR.settings.IsPoseUpdateMode(SteamVR_UpdateModes.OnUpdate))
             {
                 UpdateVisualActions();
             }
@@ -253,12 +253,12 @@ namespace Valve.VR
             if (initialized == false || isStartupFrame)
                 return;
 
-            if (SteamVR.settings.IsInputUpdateMode(SteamVR_UpdateModes.OnLateUpdate))
+            if (Scripts.SteamVR.settings.IsInputUpdateMode(SteamVR_UpdateModes.OnLateUpdate))
             {
                 UpdateNonVisualActions();
             }
 
-            if (SteamVR.settings.IsPoseUpdateMode(SteamVR_UpdateModes.OnLateUpdate))
+            if (Scripts.SteamVR.settings.IsPoseUpdateMode(SteamVR_UpdateModes.OnLateUpdate))
             {
                 //update poses and skeleton
                 UpdateVisualActions();
@@ -276,12 +276,12 @@ namespace Valve.VR
             if (initialized == false || isStartupFrame)
                 return;
 
-            if (SteamVR.settings.IsInputUpdateMode(SteamVR_UpdateModes.OnFixedUpdate))
+            if (Scripts.SteamVR.settings.IsInputUpdateMode(SteamVR_UpdateModes.OnFixedUpdate))
             {
                 UpdateNonVisualActions();
             }
 
-            if (SteamVR.settings.IsPoseUpdateMode(SteamVR_UpdateModes.OnFixedUpdate))
+            if (Scripts.SteamVR.settings.IsPoseUpdateMode(SteamVR_UpdateModes.OnFixedUpdate))
             {
                 UpdateVisualActions();
             }
@@ -293,11 +293,11 @@ namespace Valve.VR
             if (initialized == false || isStartupFrame)
                 return;
 
-            if (SteamVR.settings.IsInputUpdateMode(SteamVR_UpdateModes.OnPreCull))
+            if (Scripts.SteamVR.settings.IsInputUpdateMode(SteamVR_UpdateModes.OnPreCull))
             {
                 UpdateNonVisualActions();
             }
-            if (SteamVR.settings.IsPoseUpdateMode(SteamVR_UpdateModes.OnPreCull))
+            if (Scripts.SteamVR.settings.IsPoseUpdateMode(SteamVR_UpdateModes.OnPreCull))
             {
                 UpdateVisualActions();
             }

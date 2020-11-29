@@ -1,14 +1,12 @@
 ﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
 
-using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
-
-using System.Linq;
-using Valve.Newtonsoft.Json;
 using System.IO;
+using System.Linq;
+using UnityEngine;
+using Valve.Newtonsoft.Json;
 
-namespace Valve.VR
+namespace Assets.SteamVR.Input
 {
     [System.Serializable]
     public class SteamVR_Input_ActionFile

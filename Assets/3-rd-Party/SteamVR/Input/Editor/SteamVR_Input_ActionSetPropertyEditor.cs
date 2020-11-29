@@ -1,19 +1,9 @@
-﻿using UnityEditor;
+﻿using System.Collections.Generic;
+using System.Linq;
+using UnityEditor;
 using UnityEngine;
 
-using System.CodeDom;
-using Microsoft.CSharp;
-using System.IO;
-using System.CodeDom.Compiler;
-
-using System.Linq;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Linq.Expressions;
-using System;
-
-
-namespace Valve.VR
+namespace Assets.SteamVR.Input.Editor
 {
     [CustomPropertyDrawer(typeof(SteamVR_ActionSet))]
     public class SteamVR_Input_ActionSetPropertyEditor : PropertyDrawer

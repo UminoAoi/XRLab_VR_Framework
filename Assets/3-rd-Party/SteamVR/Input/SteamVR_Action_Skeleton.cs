@@ -1,14 +1,13 @@
 ﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
 
-using UnityEngine;
-using System.Collections;
 using System;
-
 using System.Runtime.InteropServices;
-using System.Collections.Generic;
 using System.Text;
+using Assets.SteamVR.Plugins;
+using Assets.SteamVR.Scripts;
+using UnityEngine;
 
-namespace Valve.VR
+namespace Assets.SteamVR.Input
 {
     [Serializable]
     /// <summary>

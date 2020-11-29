@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using UnityEditor;
 using UnityEngine;
 using Valve.Newtonsoft.Json;
 
-namespace Valve.VR
+namespace Assets.SteamVR.Input.Editor
 {
     public class SteamVR_Input_ActionManifest_Manager : AssetPostprocessor
     {

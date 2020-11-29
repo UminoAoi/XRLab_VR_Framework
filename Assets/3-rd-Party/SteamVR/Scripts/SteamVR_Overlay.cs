@@ -4,11 +4,10 @@
 //
 //=============================================================================
 
+using Assets.SteamVR.Plugins;
 using UnityEngine;
-using System.Collections;
-using Valve.VR;
 
-namespace Valve.VR
+namespace Assets.SteamVR.Scripts
 {
     public class SteamVR_Overlay : MonoBehaviour
     {
@@ -131,7 +130,7 @@ namespace Valve.VR
             if (overlay == null)
                 return false;
 
-            var size = (uint)System.Runtime.InteropServices.Marshal.SizeOf(typeof(Valve.VR.VREvent_t));
+            var size = (uint)System.Runtime.InteropServices.Marshal.SizeOf(typeof(VREvent_t));
             return overlay.PollNextOverlayEvent(handle, ref pEvent, size);
         }
 

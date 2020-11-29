@@ -1,12 +1,12 @@
 ﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
 
-using System;
 using System.Collections;
+using Assets.SteamVR.Input.BehaviourUnityEvents;
+using Assets.SteamVR.Plugins;
+using Assets.SteamVR.Scripts;
 using UnityEngine;
-using UnityEngine.Events;
-using Valve.VR;
 
-namespace Valve.VR
+namespace Assets.SteamVR.Input
 {
     public class SteamVR_Behaviour_Skeleton : MonoBehaviour
     {
@@ -319,7 +319,7 @@ namespace Valve.VR
 
         protected virtual void Awake()
         {
-            SteamVR.Initialize();
+            Scripts.SteamVR.Initialize();
 
             AssignBonesArray();
 
@@ -941,7 +941,7 @@ namespace Valve.VR
             bool temporarySession = false;
             if (Application.isEditor && Application.isPlaying == false)
             {
-                temporarySession = SteamVR.InitializeTemporarySession(true);
+                temporarySession = Scripts.SteamVR.InitializeTemporarySession(true);
                 Awake();
 
 #if UNITY_EDITOR
@@ -958,7 +958,7 @@ namespace Valve.VR
                         UnityEditor.EditorUtility.ClearProgressBar();
 
                         if (temporarySession)
-                            SteamVR.ExitTemporarySession();
+                            Scripts.SteamVR.ExitTemporarySession();
                         return;
                     }
                     System.Threading.Thread.Sleep((int)increment);
@@ -1004,7 +1004,7 @@ namespace Valve.VR
             }
 
             if (temporarySession)
-                SteamVR.ExitTemporarySession();
+                Scripts.SteamVR.ExitTemporarySession();
         }
 
         protected static bool IsMetacarpal(int boneIndex)

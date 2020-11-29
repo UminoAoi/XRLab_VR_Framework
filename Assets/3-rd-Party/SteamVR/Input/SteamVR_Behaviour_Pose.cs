@@ -1,12 +1,11 @@
 ﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
 
-using System;
-using System.Threading;
+using Assets.SteamVR.Input.BehaviourUnityEvents;
+using Assets.SteamVR.Plugins;
+using Assets.SteamVR.Scripts;
 using UnityEngine;
-using UnityEngine.Events;
-using Valve.VR;
 
-namespace Valve.VR
+namespace Assets.SteamVR.Input
 {
     /// <summary>
     /// This component simplifies the use of Pose actions. Adding it to a gameobject will auto set that transform's position and rotation every update to match the pose.
@@ -85,7 +84,7 @@ namespace Valve.VR
 
         protected virtual void OnEnable()
         {
-            SteamVR.Initialize();
+            Scripts.SteamVR.Initialize();
 
             if (poseAction != null)
             {

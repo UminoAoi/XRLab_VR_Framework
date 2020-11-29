@@ -4,17 +4,15 @@
 //
 //=============================================================================
 
-using UnityEngine;
-using UnityEditor;
-using System.Text;
-using System.Collections.Generic;
-using Valve.VR;
 using System.IO;
+using Assets.SteamVR.Scripts;
+using UnityEditor;
+using UnityEngine;
 
-namespace Valve.VR
+namespace Assets.SteamVR.Editor
 {
     [CustomEditor(typeof(SteamVR_Skybox)), CanEditMultipleObjects]
-    public class SteamVR_SkyboxEditor : Editor
+    public class SteamVR_SkyboxEditor : UnityEditor.Editor
     {
         private const string nameFormat = "{0}/{1}-{2}.png";
         private const string helpText = "Take snapshot will use the current " +

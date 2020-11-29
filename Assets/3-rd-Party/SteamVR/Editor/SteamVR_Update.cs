@@ -4,16 +4,16 @@
 //
 //=============================================================================
 
-using UnityEngine;
-using UnityEditor;
 using System.IO;
 using System.Text.RegularExpressions;
+using UnityEditor;
+using UnityEngine;
 
 #if UNITY_2018_3_OR_NEWER
 #pragma warning disable CS0618
 #endif
 
-namespace Valve.VR
+namespace Assets.SteamVR.Editor
 {
     [InitializeOnLoad]
     public class SteamVR_Update : EditorWindow

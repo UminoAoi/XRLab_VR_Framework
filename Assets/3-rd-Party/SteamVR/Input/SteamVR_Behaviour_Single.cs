@@ -1,15 +1,10 @@
 ﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+using Assets.SteamVR.Input.BehaviourUnityEvents;
+using Assets.SteamVR.Plugins;
 using UnityEngine;
-using UnityEngine.Events;
 
-
-namespace Valve.VR
+namespace Assets.SteamVR.Input
 {
     /// <summary>
     /// SteamVR_Behaviour_Single simplifies the use of single actions. It gives an event to subscribe to for when the action has changed.

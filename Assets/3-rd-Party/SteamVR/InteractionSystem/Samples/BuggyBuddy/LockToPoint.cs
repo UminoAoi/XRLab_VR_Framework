@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Assets.SteamVR.InteractionSystem.Core.Scripts;
 using UnityEngine;
 
-
-namespace Valve.VR.InteractionSystem.Sample
+namespace Assets.SteamVR.InteractionSystem.Samples.BuggyBuddy
 {
     public class LockToPoint : MonoBehaviour
     {

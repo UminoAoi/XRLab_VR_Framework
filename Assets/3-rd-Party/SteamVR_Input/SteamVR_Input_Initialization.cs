@@ -8,6 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using Assets.SteamVR.Input;
+
 namespace Valve.VR
 {
     using System;
