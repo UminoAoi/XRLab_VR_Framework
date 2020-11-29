@@ -30,7 +30,7 @@ public class RoomLogic : MonoBehaviour
     void Update()
     {
         foes = GameObject.FindGameObjectsWithTag("Foe");
-        if(counter == 10)
+        if(counter == 3)
         {
                         //exitScene
         }
