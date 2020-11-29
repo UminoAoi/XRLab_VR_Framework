@@ -6,13 +6,13 @@ using UnityEngine;
 
 public class Interact : Interactable
 {
-
+    public Transform Foe;
     private void Awake() {
     }
 
 
     public override void OnInteraction(HandManager handManager, PointerEventArgs args) {
-        Destroy(this);
+        Destroy(This);
     }
 
     public override void OnPointerEnter(HandManager handManager, PointerEventArgs args) {
