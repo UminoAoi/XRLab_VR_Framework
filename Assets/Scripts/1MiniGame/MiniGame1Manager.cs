@@ -55,11 +55,12 @@ public class MiniGame1Manager : MonoBehaviour {
 
     }
 
-    public void TryNextRound() {
+    public IEnumerator TryNextRound() {
         if (currentAnswerCount >= neededAnswers) {
             gameStarted = false;
             exit.ChangeExitAvailibity(false);
         } else {
+            yield return new WaitForSeconds(1.5f);
             PlayNewSound();
         }
     }
@@ -115,30 +116,32 @@ public class MiniGame1Manager : MonoBehaviour {
             Vector3 lastPosition = item.transform.position;
             int rand = Random.Range(0, itemSpots.Count - 1);
             Vector3 newPosition = itemSpots[rand].position;
-            if (isFree(newPosition))
+
+            GameObject itemOnPosition = isFree(newPosition);
+            if (itemOnPosition == null)
             {
                 item.transform.position = newPosition;
             }
             else
             {
-                GameObject itemToSwap = items[rand];
+                GameObject itemToSwap = itemOnPosition;
                 item.transform.position = itemToSwap.transform.position;
                 itemToSwap.transform.position = lastPosition;
             }
         }
     }
 
-    private bool isFree(Vector3 newPosition)
+    private GameObject isFree(Vector3 newPosition)
     {
         foreach (var item in items)
         {
             if (item.transform.position == newPosition)
             {
-                return false;
+                return item;
             }
         }
 
-        return true;
+        return null;
     }
 
     public void OnInteract(ItemType itemType) {
@@ -154,7 +157,7 @@ public class MiniGame1Manager : MonoBehaviour {
             timeWaited = 0;
             audioSource.Play();
             SwapPositions();
-            TryNextRound();
+            StartCoroutine(TryNextRound());
         }
         else
         {
