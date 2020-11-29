@@ -27,7 +27,12 @@ public class MiniGame1Manager : MonoBehaviour {
     private void Start() {
         exit = FindObjectOfType<ExitFromMinigame>();
         audioSource = GetComponent<AudioSource>();
-        items = new List<GameObject>(itemsParent.GetComponentsInChildren<GameObject>());
+        items = new List<GameObject>();
+
+        for(int i = 0; i< itemsParent.transform.childCount; i++) {
+            items.Add(itemsParent.transform.GetChild(i).gameObject);
+        }
+
         audioSource.clip = instructions;
         audioSource.Play();
     }
