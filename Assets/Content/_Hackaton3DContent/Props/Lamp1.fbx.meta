@@ -19,7 +19,12 @@ ModelImporter:
     3300000: Cube.001
     4300000: Cube.001
     10800000: Point
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: e3dda07d9b719f84282183ef0b9a6e9b, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
