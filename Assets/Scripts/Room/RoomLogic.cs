@@ -12,9 +12,12 @@ public class RoomLogic : MonoBehaviour
     public int counter = 0;
 
     public Transform Foe_prefab;
+
+    ExitFromMinigame exit;
     // Start is called before the first frame update
     void Start()
     {
+        exit = FindObjectOfType<ExitFromMinigame>();
         for (int i = 0; i < 5; i++)
         {
             Instantiate(Foe_prefab, new Vector3(Random.Range(-20.0f, 20.0f), 1, Random.Range(-20.0f, 20.0f)), Quaternion.identity);
@@ -32,7 +35,7 @@ public class RoomLogic : MonoBehaviour
         foes = GameObject.FindGameObjectsWithTag("Foe");
         if(counter == 3)
         {
-                        //exitScene
+            exit.ChangeExitAvailibity(false);                //exitScene
         }
         targetTime -= Time.deltaTime;
 
