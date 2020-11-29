@@ -1,40 +1,14 @@
 fileFormatVersion: 2
-guid: babdfa1117c796d4d922e6de7da7ea55
+guid: d13d1e12d05df354ca3a7e55779156c3
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Fibers182
-    100002: PM3D_Cylinder3D1
-    100004: PM3D_Sphere3D1
-    100006: PM3D_Sphere3D2
-    100008: Skin_Mannequin_ryan_female_01
-    100010: //RootNode
-    400000: Fibers182
-    400002: PM3D_Cylinder3D1
-    400004: PM3D_Sphere3D1
-    400006: PM3D_Sphere3D2
-    400008: Skin_Mannequin_ryan_female_01
-    400010: //RootNode
-    2100000: Skin_Mannequin_ryan_female_01
-    2100002: Fibers182
-    2100004: PM3D_Sphere3D2
-    2100006: PM3D_Cylinder3D1
-    2100008: PM3D_Sphere3D1
-    2300000: Fibers182
-    2300002: PM3D_Cylinder3D1
-    2300004: PM3D_Sphere3D1
-    2300006: PM3D_Sphere3D2
-    2300008: Skin_Mannequin_ryan_female_01
-    3300000: Fibers182
-    3300002: PM3D_Cylinder3D1
-    3300004: PM3D_Sphere3D1
-    3300006: PM3D_Sphere3D2
-    3300008: Skin_Mannequin_ryan_female_01
-    4300000: Skin_Mannequin_ryan_female_01
-    4300002: Fibers182
-    4300004: PM3D_Sphere3D2
-    4300006: PM3D_Cylinder3D1
-    4300008: PM3D_Sphere3D1
+    100000: //RootNode
+    400000: //RootNode
+    2100000: No Name
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Cube
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -66,7 +40,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 55
+    globalScale: 2
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
