@@ -35,7 +35,7 @@ public class RoomLogic : MonoBehaviour
         foes = GameObject.FindGameObjectsWithTag("Foe");
         if(counter == 3)
         {
-            exit.ChangeExitAvailibity(false);                //exitScene
+            exit.ChangeExitAvailibity(true);                //exitScene
         }
         targetTime -= Time.deltaTime;
 

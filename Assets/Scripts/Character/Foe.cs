@@ -13,6 +13,7 @@ public class Foe : MonoBehaviour
      public int is_selected = 0;
      public int is_watched = 0;
      public int was_seen = 0;
+     public AudioSource audioSource;
  
  
  
@@ -36,6 +37,7 @@ public class Foe : MonoBehaviour
  
              if (Vector3.Distance(transform.position, Player.position) <= MinDist)
              {
+                 audioSource.Play();
                  SceneManager.LoadScene("3MiniGame");
              }
  
