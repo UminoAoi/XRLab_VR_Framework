@@ -7,6 +7,9 @@ TagManager:
   - projectile
   - FxTemporaire
   - Grabbable
+  - Foe
+  - Ebalo
+  - Logic
   layers:
   - Default
   - TransparentFX
@@ -20,7 +23,7 @@ TagManager:
   - NoCollisionWithHand
   - Ground
   - Walls
-  - 
+  - PIZDEC
   - 
   - 
   - 

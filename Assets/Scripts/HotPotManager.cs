@@ -85,7 +85,6 @@ public class HotPotManager : MonoBehaviour
 
             HideObject();
             StartGame();
-            hidingObject.HideText();
 
         } else {
 

@@ -9,7 +9,7 @@ public class MiniGame1Manager : MonoBehaviour {
     public bool gameStarted;
     public Player player;
     public AudioSource audioSource;
-    public AudioClip instructions, fireAudioClip, waterAudioClip, stormAudioClip, lightningAudioClip, goodAudioClip, badAudioClip, tooLateAudioClip;
+    public AudioClip instructions, fireAudioClip, waterAudioClip, earthAudioClip, windAudioClip, goodAudioClip, badAudioClip, tooLateAudioClip;
     ExitFromMinigame exit;
 
     private float newInstructionTime = 6;
@@ -95,11 +95,11 @@ public class MiniGame1Manager : MonoBehaviour {
             case ItemType.Wasser:
                 audioSource.clip = waterAudioClip;
                 break;
-            case ItemType.Sturm:
-                audioSource.clip = stormAudioClip;
+            case ItemType.Erde:
+                audioSource.clip = earthAudioClip;
                 break;
-            case ItemType.Blitz:
-                audioSource.clip = lightningAudioClip;
+            case ItemType.Wind:
+                audioSource.clip = windAudioClip;
                 break;
             default:
                 Debug.Log(lastPlayed);
