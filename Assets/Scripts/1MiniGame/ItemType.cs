@@ -8,6 +8,6 @@ namespace Assets.Scripts._1MiniGame
 {
     public enum ItemType
     {
-        Feuer, Wasser, Sturm, Blitz, Start
+        Feuer, Wasser, Erde, Wind, Start
     }
 }
